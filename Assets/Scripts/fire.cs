@@ -8,21 +8,26 @@ public class fire : MonoBehaviour
     public GameObject enemy;
     public Transform turretbase;
     float rotspeed = 2;
-    float speed = 15;
+    float speed = 20;
+    float movespeed = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Shoot()
     {
-        Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        GameObject shell = Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        shell.GetComponent<Rigidbody>().linearVelocity = speed * turretbase.forward;
     }
 
-    void RotateTurret()
+    float? RotateTurret()
     {
         float? angle = CalculateAngle(true);
         if (angle != null)
         {
             turretbase.localEulerAngles = new Vector3(360f - (float)angle, 0f, 0f);
         }
+        return angle;
     }
+
+
 
     float? CalculateAngle(bool low)
     {
@@ -55,10 +60,14 @@ public class fire : MonoBehaviour
         Vector3 direction = (enemy.transform.position - this.transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0,direction.z));
         this.transform.rotation=Quaternion.Slerp(this.transform.rotation, lookRotation, Time.deltaTime * rotspeed);
-        RotateTurret();
-        if(Input.GetKeyDown(KeyCode.Space))
+        float? angle = RotateTurret();
+        if(angle != null)
         {
             Shoot();
+        }
+        else
+        {
+            this.transform.Translate(0,0, Time.deltaTime * movespeed);
         }
     }
 }
