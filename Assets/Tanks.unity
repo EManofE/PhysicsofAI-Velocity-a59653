@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  rotationSpeed: 1
+  rotationSpeed: 100
   transgun: {fileID: 1885877433}
   gun: {fileID: 1440198886}
   bullet: {fileID: 9162047389006064978, guid: 18d4831b417f140bf8b372c93d45cd40, type: 3}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 729810331}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

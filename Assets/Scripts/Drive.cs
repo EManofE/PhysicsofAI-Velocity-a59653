@@ -33,11 +33,11 @@ public class Drive : MonoBehaviour
 
         if(Input.GetKey(KeyCode.T))
         {
-            transgun.RotateAround(transgun.position, transgun.right, -2);
+            transgun.RotateAround(transgun.position, transgun.right, -10*Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.G))
         {
-            transgun.RotateAround(transgun.position, transgun.right, 2);
+            transgun.RotateAround(transgun.position, transgun.right, 10*Time.deltaTime);
         }
         else if(Input.GetKeyDown(KeyCode.B))
         {
