@@ -137,7 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  rotationSpeed: 100
+  rotationSpeed: 1
+  transgun: {fileID: 1885877433}
+  gun: {fileID: 1440198886}
+  bullet: {fileID: 9162047389006064978, guid: 18d4831b417f140bf8b372c93d45cd40, type: 3}
 --- !u!65 &620903249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -535,6 +538,37 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1440198885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440198886}
+  m_Layer: 0
+  m_Name: turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1440198886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440198885}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.12953065, y: 0.000000014901159, z: -0.000000009313225, w: 0.9915755}
+  m_LocalPosition: {x: -0, y: 0.499, z: 0.949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1885877433}
+  m_LocalEulerAnglesHint: {x: -14.885, y: 0, z: 0}
 --- !u!1 &1614560044
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +600,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2054135077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1885877433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5714334409709048953, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
+  m_PrefabInstance: {fileID: 3052892970279238296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054135075 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
@@ -736,7 +775,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 779faaa7659374a07984d4f51f044a29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5714334409709048953, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1440198886}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1043457633746962670, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
       insertIndex: -1
